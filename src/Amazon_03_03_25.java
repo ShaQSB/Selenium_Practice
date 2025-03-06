@@ -23,6 +23,10 @@ public class Amazon_03_03_25 {
     public static void main(String[] args) throws InterruptedException {
 
 
+        String user="9900131902";
+
+        String passwd="Shakthi@1853";
+
         WebDriver driver = new ChromeDriver();
 
         driver .manage().window().maximize();
@@ -60,6 +64,8 @@ public class Amazon_03_03_25 {
 
         WebElement langselect= driver.findElement(By.xpath("//span[@style='unicode-bidi:isolate; direction:ltr;'][text()='ಕನ್ನಡ']"));
 
+        Thread.sleep(3000);
+
         langselect.click();
 
         Thread.sleep(3000);
@@ -75,6 +81,22 @@ public class Amazon_03_03_25 {
 
         signin.click();
 
+
+        WebElement un=driver.findElement(By.xpath("//input[starts-with(@type,'email')]"));
+
+        un.sendKeys(user);
+
+        WebElement cntnue= driver.findElement(By.xpath("//input[@type='submit']"));
+
+        cntnue.click();
+
+        WebElement pwd=driver.findElement(By.xpath("//input[@type='password' ]"));
+
+        pwd.sendKeys(passwd);
+
+        WebElement login = driver.findElement(By.xpath("(//input[@type='submit'])[1]"));
+
+        login.click();
 
     }
 }
